@@ -1,0 +1,2 @@
+# dede.py
+print()
