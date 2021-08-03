@@ -1,2 +1,0 @@
-# dede.py
-print()
