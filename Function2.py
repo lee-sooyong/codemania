@@ -50,7 +50,7 @@ def union(*ar):
     result=[]
     #HAM(0) | EGG(1)
     for item in ar:
-        #H(0) | A(1) | M(2)
+        #H(0) | A(1) | M
         for x in item:
             if x not in result:
                 result.append(x)
