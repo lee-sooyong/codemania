@@ -25,4 +25,3 @@ print(Person.title)
 p1.age=30
 print(p1.age)
 # print(p2.age)
-print("bbb")
