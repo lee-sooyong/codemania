@@ -1,10 +1,9 @@
-# db1.py
+# db2.py
 import sqlite3
 
+#연결객체 생성(파일에 영구적으로 기록)
+con = sqlite3.connect("d:\\work\\sample.db")
 
-#연결객체 생성(일단은 메모리에 임시로 저장)
-# con = sqlite3.connect(":memory:")
-# con=sqlite3.connect("d:\\work\\test.db")
 #구문을 수행할 커서 객체를 생성
 cur = con.cursor()
 #데이터를 담을 테이블을 생성
@@ -21,8 +20,13 @@ cur.executemany("insert into PhoneBook values (?, ?);",datalist)
 
 #결과를 검색
 cur.execute("select * from PhoneBook;")
-for row in cur:
-    print(row)
+print("---fetchone()---")
+print(cur.fetchone())
+print("---fetchmany(2)---")
+print(cur.fetchmany(2))
+print("---fetchall()---")
+cur.execute("select * from PhoneBook;")
+print(cur.fetchall())
 
-#정상적으로 작업 완료
+#정삭적으로 작업 완료
 con.commit()
